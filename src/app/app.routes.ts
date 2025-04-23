@@ -15,5 +15,9 @@ export const routes: Routes = [
     path: 'numbers',
     title: 'Numbers Pipes',
     loadComponent: () => import('./pages/numbers-page/numbers-page.component').then(m => m.NumbersPageComponent),
+  },
+  {
+    path: '**',
+    redirectTo: 'basic',
   }
 ];

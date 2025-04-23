@@ -1,1 +1,25 @@
-<p>basic-page works!</p>,
+<section class="ml-2">
+  <h2 class="text-3xl font-bold">Basic Pipes</h2>
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+  <div class="stat">
+    <div class="stat-title">Lowwercase Pipe</div>
+    <div class="stat-value">{{ lowercase() | lowercase }}</div>
+    <div class="stat-desc">{{ lowercase() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Uppercase Pipe</div>
+    <div class="stat-value">{{ uppercase() | uppercase }}</div>
+    <div class="stat-desc">↗︎ {{ uppercase() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Titlecase Pipe</div>
+    <div class="stat-value">
+      {{ titlecase() | titlecase }}
+      <div class="stat-desc">{{ titlecase() }}</div>
+    </div>
+  </div>
+</div>

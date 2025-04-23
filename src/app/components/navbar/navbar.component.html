@@ -1,0 +1,16 @@
+<div class="navbar bg-base-100 shadow-sm flex justify-between">
+  <a class="btn btn-ghost text-xl">daisyUI</a>
+  <ul class="flex justify-around">
+    @for (routeItem of routes; track $index) {
+    <li>
+      <a
+        class="btn btn-ghost"
+        [routerLink]="routeItem.path"
+        routerLinkActive="text-accent"
+      >
+        {{ routeItem.path }}
+      </a>
+    </li>
+    }
+  </ul>
+</div>
