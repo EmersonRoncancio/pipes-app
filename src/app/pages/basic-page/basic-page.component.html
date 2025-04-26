@@ -2,7 +2,7 @@
   <h2 class="text-3xl font-bold">Basic Pipes</h2>
 </section>
 
-<div class="stats stats-vertical lg:stats-horizontal shadow">
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
   <div class="stat">
     <div class="stat-title">Lowwercase Pipe</div>
     <div class="stat-value">{{ lowercase() | lowercase }}</div>
@@ -19,6 +19,44 @@
     <div class="stat-title">Titlecase Pipe</div>
     <div class="stat-value">
       {{ titlecase() | titlecase }}
+      <div class="stat-desc">{{ titlecase() }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Custom date pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | short | GMT-5</div>
+    <div class="stat-value">{{ customDate() | date : "short" : "GMT-5" }}</div>
+    <div class="stat-desc">↗︎ 400 (22%)</div>
+  </div>
+</div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date | long | short | GMT-5</div>
+    <div class="stat-value">{{ customDate() | date : "dd/MM/yyyy" }}</div>
+    <div class="stat-desc">{{ lowercase() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | short | GMT-5</div>
+    <div class="stat-value">{{ customDate() | date : "HH;mm:ss" }}</div>
+    <div class="stat-desc">↗︎ {{ uppercase() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | short | GMT-5</div>
+    <div class="stat-value">
+      {{ customDate() | date : "EEEE d, MMMM" }}
       <div class="stat-desc">{{ titlecase() }}</div>
     </div>
   </div>

@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './custom-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomPageComponent { }
+export class CustomPageComponent {
+
+ }

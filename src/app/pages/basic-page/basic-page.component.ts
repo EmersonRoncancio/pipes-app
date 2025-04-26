@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 import { AppComponent } from "../../app.component";
-import { LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'basic-page',
-  imports: [AppComponent, LowerCasePipe, UpperCasePipe, TitleCasePipe],
+  imports: [AppComponent, LowerCasePipe, UpperCasePipe, TitleCasePipe, DatePipe],
   templateUrl: './basic-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -14,4 +15,16 @@ export class BasicPageComponent {
   uppercase = signal('emerson');
   titlecase = signal('eMeRson');
 
+  customDate = signal(new Date());
+
+  updateDate = effect((onClear)=> {
+
+    const interval = setInterval(()=>{
+      this.customDate.set(new Date());
+    })
+
+    onClear(()=>{
+      clearInterval(interval);
+    })
+  })
  }
