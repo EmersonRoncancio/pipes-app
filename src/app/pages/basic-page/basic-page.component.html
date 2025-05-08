@@ -44,20 +44,20 @@
   <div class="stat">
     <div class="stat-title">Date | long | short | GMT-5</div>
     <div class="stat-value">{{ customDate() | date : "dd/MM/yyyy" }}</div>
-    <div class="stat-desc">{{ lowercase() }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
   </div>
 
   <div class="stat">
     <div class="stat-title">Date | long | short | GMT-5</div>
     <div class="stat-value">{{ customDate() | date : "HH;mm:ss" }}</div>
-    <div class="stat-desc">↗︎ {{ uppercase() }}</div>
+    <div class="stat-desc">↗︎ {{ customDate() }}</div>
   </div>
 
   <div class="stat">
     <div class="stat-title">Date | long | short | GMT-5</div>
     <div class="stat-value">
       {{ customDate() | date : "EEEE d, MMMM" }}
-      <div class="stat-desc">{{ titlecase() }}</div>
+      <div class="stat-desc">{{ customDate() }}</div>
     </div>
   </div>
 </div>

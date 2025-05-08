@@ -11,6 +11,4 @@ export class NumbersPageComponent {
 
   totalSells = signal(24_384_234.234);
   parcent = signal(0.234);
-
-
  }
