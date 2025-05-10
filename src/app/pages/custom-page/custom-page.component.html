@@ -2,6 +2,26 @@
   <h2 class="text-3xl font-bold">Pipes no tan comunes</h2>
 </section>
 
-<app-card [title]="'Card One'">
-  <button class="btn btn-primary">Hello</button>
-</app-card>
+<div class="flex gap-4 w-full">
+  <app-card [title]="'Card One'">
+    <button class="btn btn-primary">Hello</button>
+  </app-card>
+
+  <app-card [title]="'Slice Pipe'">
+    <p>
+      {{ users() | slice : 0 : 2 }}
+    </p>
+  </app-card>
+
+  <app-card [title]="'Json Pipe'">
+    <p>
+      {{ users() | json }}
+    </p>
+  </app-card>
+
+  <app-card [title]="'keyvalue Pipe'">
+    @for (item of user | keyvalue; track $index) {
+    <p>{{ item.key }} : {{ item.value }}</p>
+    }
+  </app-card>
+</div>
