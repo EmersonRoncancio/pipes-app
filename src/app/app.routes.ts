@@ -17,6 +17,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/numbers-page/numbers-page.component').then(m => m.NumbersPageComponent),
   },
   {
+    path: 'personality',
+    title: 'Personality Pipes',
+    loadComponent: () => import('./pages/personality-page/personality-page.component').then(m => m.PersonalityPageComponent),
+  },
+  {
     path: '**',
     redirectTo: 'basic',
   }

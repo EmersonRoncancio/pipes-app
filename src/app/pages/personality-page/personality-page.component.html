@@ -1,0 +1,54 @@
+<section class="ml-2">
+  <h2 class="text-3xl font-bold">Pipes no de Angular</h2>
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Toggle Case Pipe</div>
+    <div class="stat-value">{{ "Hola mani" | toggleCase : toggle() }}</div>
+    <div class="stat-desc">{{ "Hola mani" }}</div>
+
+    <button class="btn btn-primary w-[200px]" (click)="onToggle()">
+      Toggle Case
+    </button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="overflow-x-auto">
+  <table class="table table-xs w-full">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+        <th>1</th>
+        <td>Cy Ganderton</td>
+        <td>Quality Control Specialist</td>
+        <td>Blue</td>
+      </tr>
+      <!-- row 2 -->
+      <tr>
+        <th>2</th>
+        <td>Hart Hagerty</td>
+        <td>Desktop Support Technician</td>
+        <td>Purple</td>
+      </tr>
+      <!-- row 3 -->
+      <tr>
+        <th>3</th>
+        <td>Brice Swyre</td>
+        <td>Tax Accountant</td>
+        <td>Red</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
