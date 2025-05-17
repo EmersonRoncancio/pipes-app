@@ -16,39 +16,54 @@
 
 <div class="divider"></div>
 
+<section class="flex justify-between mb-2">
+  <h2>Pipes personalizados en accion</h2>
+  <div class="flex gap-2">
+    <button class="btn btn-info">Por Nombre</button>
+    <button class="btn btn-primary">Por Puede volar</button>
+    <button class="btn btn-secondary">Por Color</button>
+    <button class="btn btn-success">Por Creador</button>
+  </div>
+</section>
+
 <div class="overflow-x-auto">
   <table class="table table-xs w-full">
     <!-- head -->
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Puede volar</th>
+        <th>Color</th>
+        <th>Creador</th>
       </tr>
     </thead>
     <tbody>
+      @for (hero of hero(); track hero.id) {
+      <tr>
+        <th>{{ hero.id }}</th>
+        <td>{{ hero.name }}</td>
+        <td>
+          <span
+            class="text-xs"
+            [class.text-success]="hero.canFly"
+            [class.text-accent]="!hero.canFly"
+            >{{ hero.canFly | canfly }}</span
+          >
+        </td>
+        <td>
+          <span [style.color]="hero.color | styleColor">
+            {{ hero.color | color }}
+          </span>
+        </td>
+        <td>
+          <span [style.color]="hero.creator === 0 ? '#E57373' : '#64B5F6'">
+            {{ hero.creator | heroCreator }}
+          </span>
+        </td>
+      </tr>
+      }
       <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
     </tbody>
   </table>
 </div>

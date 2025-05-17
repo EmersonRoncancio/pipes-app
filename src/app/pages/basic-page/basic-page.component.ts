@@ -5,7 +5,7 @@ import { interval } from 'rxjs';
 
 @Component({
   selector: 'basic-page',
-  imports: [AppComponent, LowerCasePipe, UpperCasePipe, TitleCasePipe, DatePipe],
+  imports: [ LowerCasePipe, UpperCasePipe, TitleCasePipe, DatePipe],
   templateUrl: './basic-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
