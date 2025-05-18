@@ -18,11 +18,24 @@
 
 <section class="flex justify-between mb-2">
   <h2>Pipes personalizados en accion</h2>
+  <input
+    type="text"
+    class="input input-accent"
+    (input)="onFilterQuery(queryFilter.value)"
+    #queryFilter
+  />
+
   <div class="flex gap-2">
-    <button class="btn btn-info">Por Nombre</button>
-    <button class="btn btn-primary">Por Puede volar</button>
-    <button class="btn btn-secondary">Por Color</button>
-    <button class="btn btn-success">Por Creador</button>
+    <button (click)="onSortBy('name')" class="btn btn-info">Por Nombre</button>
+    <button (click)="onSortBy('canFly')" class="btn btn-primary">
+      Por Puede volar
+    </button>
+    <button (click)="onSortBy('color')" class="btn btn-secondary">
+      Por Color
+    </button>
+    <button (click)="onSortBy('creator')" class="btn btn-success">
+      Por Creador
+    </button>
   </div>
 </section>
 
@@ -39,7 +52,8 @@
       </tr>
     </thead>
     <tbody>
-      @for (hero of hero(); track hero.id) {
+      @for (hero of hero() | filterQuery: filterQuery() | heroSortVipe:
+      sortBY(); track hero.id) {
       <tr>
         <th>{{ hero.id }}</th>
         <td>{{ hero.name }}</td>
